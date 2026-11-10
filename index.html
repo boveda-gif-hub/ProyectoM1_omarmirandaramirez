@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generar paleta de colores</title>
+  <meta name="description" content="Genera paletas de colores aleatorias en HSL, HEX o RGBA para propuestas de branding.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#paleta">Saltar a la paleta</a>
+
+  <header>
+    <h1>ColorFly studio - Generador de paletas de colores</h1>
+    <p>Genera paletas aleatorias, bloquea tus favoritos y copia el código con un clic.</p>
+  </header>
+
+  <main>
+    <section class="controles" aria-label="Opciones de la paleta">
+      <div class="campo">
+        <label for="tamano">Tamaño de la paleta</label>
+        <select id="tamano">
+          <option value="6">6 colores</option>
+          <option value="8">8 colores</option>
+          <option value="9">9 colores</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="formato">Formato de generación</label>
+        <select id="formato">
+          <option value="hsl">HSL</option>
+          <option value="hex">HEX</option>
+          <option value="rgba">RGBA</option>
+        </select>
+      </div>
+
+      <button id="btn-generar" type="button">Generar paleta</button>
+    </section>
+
+    <section aria-labelledby="titulo-paleta">
+      <h2 id="titulo-paleta" class="oculto">Paleta actual</h2>
+      <ul id="paleta" class="paleta"></ul>
+      <div class="acciones">
+        <button id="btn-guardar" type="button" class="secundario">Guardar paleta</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-guardadas" class="guardadas">
+      <h2 id="titulo-guardadas">Paletas guardadas</h2>
+      <p id="sin-guardadas">Todavía no guardaste ninguna paleta.</p>
+      <ul id="lista-guardadas" class="lista-guardadas"></ul>
+      <button id="btn-borrar" type="button" class="secundario" hidden>Borrar todas</button>
+    </section>
+  </main>
+
+  <p id="toast" class="toast" role="status" aria-live="polite"></p>
+
+  <footer><small>Colorfly Studio · MVP v2.1</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
